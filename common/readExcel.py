@@ -52,25 +52,25 @@ class readExcel:
                     self.sheetData1.append(sheet_row)
                 elif self.sheetall.index(i) == 2:
                     self.sheetData2.append(sheet_row)
-        print('sheetData:',self.sheetData)
-        print(type(self.sheetData))
-        print(self.sheetData1)
-        print('sheetData1是个DATA1:',self.sheetData1)
-        print('DATA2:',self.sheetData2)
+        # print('sheetData:',self.sheetData)
+        # print(type(self.sheetData))
+        # print(self.sheetData1)
+        # print('sheetData1是个DATA1:',self.sheetData1)
+        # print('DATA2:',self.sheetData2)
 
     def addDate(self):
         dat = []
-        sheet3 = []
-        #将sheet3中的第二列存入列表
-        for a in self.sheetData2:
-            sheet3.append(a[1])
-        print('sheet3[1]:',sheet3)
+        # sheet3 = []
+        # #将sheet3中的第二列存入列表
+        # for a in self.sheetData2:
+        #     sheet3.append(a[1])
+        # print('sheet3[1]:',sheet3)
 
         for i in range(3):
             #将sheet1列表中的元素（也是个列表）和sheet2的中的元素（也是个列表）相加
-            data = self.sheetData[i] + self.sheetData1[i][1:]
+            data = self.sheetData[i] + self.sheetData1[i][1:] + list(self.sheetData2[i][1])
             #将sheet3的数据追加到列表后
-            data.append(sheet3[i])
+            # data.append(sheet3[i])
 
             #追加到大列表中
             dat.append(data)
