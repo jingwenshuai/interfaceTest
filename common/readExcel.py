@@ -27,12 +27,11 @@ class readExcel:
     readbook = xlrd.open_workbook(r'C:\D\interfaceTest\testData\data.xls')
     #获取所有sheet页
     sheetall = readbook.sheet_names()
-    print(type(sheetall))
+    # print(type(sheetall))
     #存sheet里的数据
     sheetData = []
     sheetData1 = []
     sheetData2 = []
-    sheetRest = []
     def getData(self):
         for i in self.sheetall:
             sheet = self.readbook.sheet_by_name(i)
@@ -44,7 +43,7 @@ class readExcel:
 
             for j in range(1,sheet_nrows):
                 #获取sheet1的第一行
-                sheet_row = sheet.row_values(j)#获取行
+                sheet_row = sheet.row_values(j)  #获取行
                 #print(sheet_row)
                 if self.sheetall.index(i) == 0:
                     self.sheetData.append(sheet_row)
@@ -52,6 +51,7 @@ class readExcel:
                     self.sheetData1.append(sheet_row)
                 elif self.sheetall.index(i) == 2:
                     self.sheetData2.append(sheet_row)
+        # print(len(self.sheetData))
         # print('sheetData:',self.sheetData)
         # print(type(self.sheetData))
         # print(self.sheetData1)
@@ -66,7 +66,7 @@ class readExcel:
         #     sheet3.append(a[1])
         # print('sheet3[1]:',sheet3)
 
-        for i in range(3):
+        for i in range(len(self.sheetData)):
             #将sheet1列表中的元素（也是个列表）和sheet2的中的元素（也是个列表）相加
             data = self.sheetData[i] + self.sheetData1[i][1:] + list(self.sheetData2[i][1])
             #将sheet3的数据追加到列表后
@@ -74,9 +74,10 @@ class readExcel:
 
             #追加到大列表中
             dat.append(data)
-        print('#######',dat)
+        # print('#######',dat)
+        return dat
 
-        pass
+
 
 read = readExcel()
 read.getData()
