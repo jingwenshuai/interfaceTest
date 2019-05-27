@@ -39,7 +39,7 @@ class ReadHttp:
             return None
 
     #定义通过传参判断需要调用的方法
-    def get_Request(self,url,param,method):
+    def get_Request(self,url,method,param):
         if str(method) == 'get':
             return self.get(url,param)
         elif str(method) == 'post':
