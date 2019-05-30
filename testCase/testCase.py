@@ -38,7 +38,7 @@ class MyTestCase(unittest.TestCase):
             print(msg)
             status = 'Error'
         finally:
-            if status ==None:
+            if status == None:
                 writeEx.writeData(id,real,'Success')
             else:
                 writeEx.writeData(id,real,'Fail')
