@@ -17,26 +17,24 @@ class ReadExcel:
     #创建一个读取sheet页数据的方法
     def getData(self):
         for i in self.sheetall:
-            print(i)
-            #
             sheet = self.readbook.sheet_by_name(i)
             #获取sheet页最大行数
             sheet_nrow = sheet.nrows
-            # print(sheet_nrow)
+
             for j in range(1,sheet_nrow):
                 #获取行数据
-                sheet_row = sheet.row_values()
-                if self.sheetall.index(i) == 'urlSheet':
+                sheet_row = sheet.row_values(j)
+                if i == 'urlSheet':
                     self.urlSheet.append(sheet_row)
-                elif self.sheetall.index(i) =='paramSheet':
+                elif i =='paramSheet':
                     self.paraamSheet.append(sheet_row)
-                elif self.sheetall.index(i) == 'assertSheet':
+                elif i == 'assertSheet':
                     self.assertSheet.append(sheet_row)
 
     #创建一个重新构建数据的方法
     def addData(self):
         enData = []
-        for i in range(len(self.sheetall)):
+        for i in range(len(self.urlSheet)):
             #将列表中数据读出后按需要拼接
             data = self.urlSheet[i] + self.paraamSheet[i][1:] + list(self.assertSheet[i][1])
             #追加到列表中

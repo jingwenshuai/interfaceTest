@@ -6,7 +6,7 @@ import requests
 class ReadHttp:
 
     #定义get方法
-    def get(self,url,param):
+    def get(self,url,param,data=None,cookie=None,header=None):
         try:
             print(url,param)
             response = requests.get(url=url,params=param)
