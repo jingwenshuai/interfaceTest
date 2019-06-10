@@ -17,7 +17,7 @@ from common.write_Excel_test import WriteExcel
 #实例化类
 readEx = ReadExcel()
 testdata = readEx.addData()
-print(testdata)
+# print(testdata)
 readHt = ReadHttp()
 writeEx = WriteExcel()
 
@@ -26,11 +26,12 @@ class MyTestCase(unittest.TestCase):
 
     @data(*testdata)
     @unpack
-    def test_normal(self,id,url,method,param,expect):
-        print(id,url,method,param,expect)
-        print(type(eval(param)))
+    def test_normal(self,id,url,method,param,expect,a):
+        print(id,url,method,param,expect,a)
+        # print(type(eval(param)))
         result = readHt.get_Request(url,method,param)
-        real = str(json.loads(result)['errorCode'])
+        print(result)
+        # real = str(json.loads(result)['errorCode'])
         try:
             status = self.assertEqual(real,expect)
             print('返回结果：',status)

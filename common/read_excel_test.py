@@ -39,7 +39,7 @@ class ReadExcel:
             data = self.urlSheet[i] + self.paraamSheet[i][1:] + list(self.assertSheet[i][1])
             #追加到列表中
             enData.append(data)
-
+        # print(enData)
         return enData
 
 read = ReadExcel()

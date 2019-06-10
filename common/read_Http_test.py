@@ -44,5 +44,5 @@ class ReadHttp:
             return self.get(url,param)
         elif str(method) == 'post':
             return self.post(url,param)
-        elif srt(method) == 'put':
+        elif str(method) == 'put':
             return self.put(url,param)
