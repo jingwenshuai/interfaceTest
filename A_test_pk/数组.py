@@ -12,6 +12,6 @@ def sz(nums,target):
             if nums[i] + nums[j] == target:
                 return [i,j]
 
-num = [3,5,8,12,5,7,9]
+num = [3,5,8,12,5,7,9,23]
 a = sz(num,10)
 print(a)
