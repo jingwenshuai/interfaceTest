@@ -16,11 +16,13 @@ class ReadConfig(object):
     #获取配置文件中的分组(EMAIL)中对应的选项的值
     def get_email(self,name):
         value = self.cf.get('EMAIL',name)
-        return value
+        print(value)
+        # return value
+
 
     # def get_http(self,name):
     #     value = self.cf.get('EMAIL',name)
 
 
-# a = ReadConfig()
-# a.get_email('mail_host')
+a = ReadConfig()
+a.get_email('mail_host')

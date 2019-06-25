@@ -6,7 +6,7 @@ import HTMLTestRunner
 import os,time
 import HTMLTestRunner
 import unittest
-from testCase import testCase
+# from testCase import testCase
 from common.send_email import ConfigEmail
 
 def run_case(dir = 'testCase'):
