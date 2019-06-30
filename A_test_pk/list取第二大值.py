@@ -8,7 +8,7 @@ def find_second(li):
     tmp_list = sorted(li)
     print("第二个最大的数是：",tmp_list[-2])
 
-    #2,设置两个下标，一个存最大，一个存第二大
+    #2,设置两个标志位，一个存最大，一个存第二大
 
     one = li[0]
     two = li[0]
